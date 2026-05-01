@@ -1,0 +1,111 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Poppins:wght@600;700;800&display=swap');
+
+/* ── Base ─────────────────────────────────────────────────── */
+@layer base {
+  :root {
+    --color-primary: 37 99 235;      /* blue-600 */
+    --color-primary-dark: 29 78 216; /* blue-700 */
+    --color-surface: 255 255 255;
+    --color-surface-2: 249 250 251;
+    --color-text: 17 24 39;
+    --color-text-muted: 107 114 128;
+    --color-border: 229 231 235;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-gray-50 dark:bg-gray-950 text-gray-900 dark:text-white;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  h1, h2, h3 {
+    font-family: 'Poppins', 'Inter', sans-serif;
+  }
+
+  * {
+    box-sizing: border-box;
+  }
+}
+
+/* ── Scrollbar ────────────────────────────────────────────── */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  @apply bg-gray-100 dark:bg-gray-800;
+}
+::-webkit-scrollbar-thumb {
+  @apply bg-gray-400 dark:bg-gray-600 rounded-full;
+}
+::-webkit-scrollbar-thumb:hover {
+  @apply bg-gray-500 dark:bg-gray-500;
+}
+
+/* ── Prose (Markdown) ─────────────────────────────────────── */
+.prose {
+  @apply text-gray-700 dark:text-gray-300;
+}
+.prose h1, .prose h2, .prose h3 {
+  @apply font-bold text-gray-900 dark:text-white;
+  margin-top: 1.25em;
+  margin-bottom: 0.5em;
+}
+.prose h1 { font-size: 1.25rem; }
+.prose h2 { font-size: 1.1rem; }
+.prose h3 { font-size: 1rem; }
+.prose p {
+  margin-bottom: 0.75em;
+  line-height: 1.75;
+}
+.prose ul, .prose ol {
+  margin-left: 1.5em;
+  margin-bottom: 0.75em;
+}
+.prose li { margin-bottom: 0.25em; }
+.prose strong {
+  @apply font-semibold text-gray-900 dark:text-white;
+}
+.prose code {
+  @apply bg-gray-100 dark:bg-gray-800 text-blue-600 dark:text-blue-400;
+  padding: 0.15em 0.4em;
+  border-radius: 4px;
+  font-size: 0.85em;
+}
+
+/* ── Transitions ──────────────────────────────────────────── */
+.fade-in {
+  animation: fadeIn 0.4s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ── Gradient Text ────────────────────────────────────────── */
+.gradient-text {
+  background: linear-gradient(135deg, #2563eb, #4f46e5);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ── Glass Card ───────────────────────────────────────────── */
+.glass {
+  @apply bg-white/80 dark:bg-gray-900/80 backdrop-blur-md;
+}
+
+/* ── Focus ring ───────────────────────────────────────────── */
+*:focus-visible {
+  @apply outline-none ring-2 ring-blue-500 ring-offset-2 dark:ring-offset-gray-900;
+}

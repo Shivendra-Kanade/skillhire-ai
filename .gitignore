@@ -1,0 +1,29 @@
+# ── Environment & Secrets ──────────────────────────────────
+.env
+.env.local
+.env.production
+.env.production.local
+backend/.env
+
+# ── Build Outputs ──────────────────────────────────────────
+frontend/dist/
+frontend/build/
+backend/target/
+
+# ── Dependencies ───────────────────────────────────────────
+frontend/node_modules/
+.mvn/wrapper/maven-wrapper.jar
+
+# ── Uploads ───────────────────────────────────────────────
+backend/uploads/
+
+# ── IDE ───────────────────────────────────────────────────
+.idea/
+*.iml
+.vscode/
+*.swp
+.DS_Store
+
+# ── Logs ──────────────────────────────────────────────────
+*.log
+logs/
